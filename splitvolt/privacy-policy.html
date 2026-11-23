@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스플릿볼트 (SplitVolt) — 개인정보처리방침</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; line-height: 1.65; max-width: 780px; margin: 40px auto; padding: 0 20px; color: #0f172a; background: #f8fafc; }
+    .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 16px rgba(15,23,42,0.04); }
+    h1 { font-size: 1.55rem; margin-bottom: 6px; }
+    h2 { font-size: 1.15rem; margin-top: 22px; color: #1e293b; }
+    .meta { color: #64748b; font-size: 0.9rem; margin-bottom: 20px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>스플릿볼트 (SplitVolt) 개인정보처리방침</h1>
+    <div class="meta">패키지명: com.bluewind.splitvolt · 게시자: 스노비 (wonwoo lee) · 시행일: 2026년 11월 24일<br />문의처: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a> · 개발자 웹사이트: <a href="https://bluewind201.github.io/">https://bluewind201.github.io/</a></div>
+    <p><strong>스플릿볼트(SplitVolt)</strong>는 전기차 BLE/CAN 계기판, 3D 차량 제어 및 차계부 기능을 제공하는 독립 안드로이드 애플리케이션입니다. 개발사는 별도의 회원 서버나 클라우드 DB를 운영하지 않으며, 차량 정보·키·주행 기록을 수집·판매하지 않습니다.</p>
+
+    <h2>1. 처리하는 정보 및 기기 권한</h2>
+    <ul>
+      <li><strong>기기 내부 전용 저장 데이터 (무수집):</strong> 차량 차대번호(VIN), 테슬라 BLE 개인키(ECDH P-256), 주행·충전 기록은 사용자 단말기 내부 저장소에만 보관되며 외부 개발사 서버로 전송되지 않습니다.</li>
+      <li><strong>위치 권한 (선택 · ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION):</strong> 현재 위치 실시간 날씨(MET Norway) 조회, 주행 지역 표기 및 Android BLE 차량/커맨더 스캔을 위해 전경 실행 중에만 사용됩니다.</li>
+      <li><strong>근처 기기 · 블루투스 (BLUETOOTH_SCAN / BLUETOOTH_CONNECT):</strong> 차량 BLE 및 커맨더 기기와의 직접 통신 및 선택적 앱 자동 실행에 사용됩니다.</li>
+      <li><strong>광고 서비스 (Google AdMob · AD_ID):</strong> 무료 앱 제공을 위해 사용자가 주차 상태에서 앱을 직접 여는 경우 오전 1회·오후 1회(1일 최대 2회) 오프닝 광고가 표시될 수 있으며, Google Mobile Ads SDK는 광고 제공과 빈도 제한을 위해 광고 식별자(AD_ID) 및 기본 기기 진단 정보를 처리할 수 있습니다. (Android 설정 &gt; Google &gt; 광고에서 맞춤형 광고 거부 가능)</li>
+    </ul>
+
+    <h2>2. 데이터 보관 및 파기</h2>
+    <p>로컬 기기에 저장된 VIN·키·차계부 데이터는 앱 삭제 또는 기기 내 앱 데이터 삭제 시 즉시 영구 파기됩니다.</p>
+
+    <h2>3. 외부 데이터 출처 및 상표 비제휴</h2>
+    <ul>
+      <li>기상 정보: MET Norway Locationforecast 2.0 (CC BY 4.0)</li>
+      <li>도로 제한속도: 차량 실시간 CAN 데이터 기반 참고 표시</li>
+      <li>본 앱은 Tesla, Inc. 또는 Enhance Auto와 제휴·승인 관계가 없는 독립 서드파티 호환 앱입니다.</li>
+    </ul>
+
+    <h2>4. 문의처 &amp; English Summary</h2>
+    <p>Publisher: <strong>스노비 (wonwoo lee)</strong> · Contact: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a> · Developer Website: <a href="https://bluewind201.github.io/">https://bluewind201.github.io/</a></p>
+    <p><strong>SplitVolt</strong> (<code>com.bluewind.splitvolt</code>) stores VINs, BLE P-256 keys, and logbook entries strictly on-device without developer servers. Foreground location and Bluetooth permissions are used for MET Norway (CC BY 4.0) weather, region display, and direct BLE telemetry. At most two Google AdMob App Open ads per day (AM/PM while parked) may process Google Advertising ID (AD_ID).</p>
+  </div>
+</body>
+</html>
