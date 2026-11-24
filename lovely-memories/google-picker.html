@@ -89,6 +89,13 @@
         }
 
         var params = parseHashParams();
+        if (window.history && typeof window.history.replaceState === 'function') {
+          window.history.replaceState(
+            null,
+            document.title,
+            window.location.pathname + window.location.search
+          );
+        }
         var accessToken = params.get('access_token') || '';
         var developerKey = params.get('developer_key') || '';
         var appId = params.get('app_id') || '';
@@ -166,8 +173,13 @@
                     return d && d.id ? String(d.id) : '';
                   })
                   .filter(Boolean);
-                var folderName =
-                  (docs[0] && docs[0].parentId) || 'Google Drive 선택 앨범';
+                var defaultAlbumNames = {
+                  ko: 'Google Drive 선택 앨범',
+                  en: 'Google Drive Selected Photos',
+                  ja: 'Google Drive 選択アルバム',
+                  'zh-CN': 'Google Drive 精选相册'
+                };
+                var folderName = defaultAlbumNames[lang] || defaultAlbumNames.ko;
                 statusEl.textContent =
                   ids.length + '개 항목을 선택했습니다. 앱으로 돌아갑니다...';
                 returnToApp(
