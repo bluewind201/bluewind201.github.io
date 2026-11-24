@@ -24,7 +24,7 @@
     <ul>
       <li><strong>대략적 위치 정보 (선택 · ACCESS_COARSE_LOCATION):</strong> 사용자가 [현재 위치로 찾기]를 누를 때만 권한을 요청하며, 소수점 4자리(약 11m 단위)로 반올림한 좌표를 기상청(MET Norway)에 전달해 실시간 날씨 조회에만 사용하고 별도 서버에 저장하지 않습니다.</li>
       <li><strong>캘린더 읽기 (선택 · READ_CALENDAR):</strong> 기기에 연동된 일정을 액자 화면 및 브리핑으로 안내하기 위해 기기 내부에서만 읽으며 외부로 전송하지 않습니다.</li>
-      <li><strong>클라우드·NAS·로컬 사진 연동 정보:</strong> 공식 OAuth 2.0 PKCE / Google Picker API(<code>drive.file</code> 최소 권한)로 연결된 Google Drive·Microsoft OneDrive·Dropbox 토큰과 시놀로지 NAS 공유 링크 비밀번호는 기기 내부 <code>AndroidKeyStore</code> AES-256-GCM 암호화 저장소에만 보관됩니다.</li>
+      <li><strong>클라우드·NAS·로컬 사진 연동 정보:</strong> 사용자가 자신의 계정으로 로그인해 고른 사진만 읽습니다(Google Drive는 <code>drive.file</code> 권한으로 고른 파일만). OneDrive·Dropbox 로그인 토큰과 시놀로지 NAS 공유 링크 비밀번호는 기기 내부에 암호화(<code>AndroidKeyStore</code> AES-256-GCM)해 보관하고, Google 로그인은 Google Play 서비스가 관리합니다. 앱의 [연결 해제]로 언제든 중단할 수 있습니다.</li>
       <li><strong>광고 서비스 (Google AdMob · AD_ID):</strong> 앱 운영을 위해 1일 최대 2회 전면광고가 표시될 수 있으며, Google Mobile Ads SDK는 광고 제공·빈도 제한·성과 측정을 위해 광고 식별자(AD_ID) 및 기기 정보를 수집·처리할 수 있습니다. (Android 설정 → Google → 광고에서 맞춤형 광고 거부 가능)</li>
     </ul>
 
@@ -44,7 +44,7 @@
     </ul>
 
     <h2>4. English Summary</h2>
-    <p><strong>Lovely memories</strong> (<code>com.bluewind.lovelymemories</code>), published by <strong>스노비 (wonwoo lee)</strong>, is an on-device digital photo frame with no developer account server. Official cloud connections (Google Drive <code>drive.file</code> Picker, Microsoft OneDrive, Dropbox OAuth PKCE) and Synology NAS link passwords are encrypted on-device with AndroidKeyStore AES-256-GCM. Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is requested only when the user triggers location lookup and sent rounded to 4 decimal places solely to MET Norway for weather forecasts. Google Mobile Ads SDK processes <code>AD_ID</code> and basic device/ad interaction telemetry to serve at most two interstitial ads per day. Developer does not sell user data. Contact: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a>.</p>
+    <p><strong>Lovely memories</strong> (<code>com.bluewind.lovelymemories</code>), published by <strong>스노비 (wonwoo lee)</strong>, is an on-device digital photo frame with no developer account server. Cloud photos are read only from the account the user signs in to (Google Drive: only files the user picks, <code>drive.file</code>). OneDrive and Dropbox sign-in tokens and Synology NAS link passwords are encrypted on-device with AndroidKeyStore AES-256-GCM; Google sign-in is handled by Google Play services. Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is requested only when the user triggers location lookup and sent rounded to 4 decimal places solely to MET Norway for weather forecasts. Google Mobile Ads SDK processes <code>AD_ID</code> and basic device/ad interaction telemetry to serve at most two interstitial ads per day. Developer does not sell user data. Contact: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a>.</p>
   </div>
 </body>
 </html>
