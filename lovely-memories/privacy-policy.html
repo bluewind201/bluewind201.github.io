@@ -25,7 +25,7 @@
       <li><strong>대략적 위치 정보 (선택 · ACCESS_COARSE_LOCATION):</strong> 사용자가 [현재 위치로 찾기]를 누를 때만 권한을 요청하며, 소수점 4자리(약 11m 단위)로 반올림한 좌표를 기상청(MET Norway) 및 대기질 오픈 네트워크(Sensor.Community / OpenAQ)에 일시 전달해 실시간 날씨·대기질 조회에만 사용하고 별도 서버에 저장하지 않습니다.</li>
       <li><strong>캘린더 읽기 (선택 · READ_CALENDAR):</strong> 기기에 연동된 일정을 액자 화면 및 브리핑으로 안내하기 위해 기기 내부에서만 읽으며 외부로 전송하지 않습니다.</li>
       <li><strong>내 기기 폴더·사진 및 클라우드·NAS 연동 정보:</strong> 내 기기 폴더 연결은 Android 시스템 문서 트리 선택기(<code>ACTION_OPEN_DOCUMENT_TREE</code>)를 통해 사용자가 직접 선택한 폴더만 읽기 전용으로 표시하며 전체 저장소 권한을 요구하지 않습니다. 클라우드 연동 시 사용자가 본인 계정으로 로그인해 선택한 폴더/사진만 읽습니다(Google Drive는 <code>drive.file</code> 권한으로 고른 파일만). OneDrive·Dropbox 로그인 토큰과 시놀로지 NAS 공유 링크 비밀번호는 기기 내부에 암호화(<code>AndroidKeyStore</code> AES-256-GCM)해 보관하고, Google 로그인은 Google Play 서비스가 관리합니다. 앱의 [연결 해제] 또는 앨범 삭제로 언제든 권한을 철회할 수 있습니다.</li>
-      <li><strong>광고 서비스 (Google AdMob · AD_ID):</strong> 앱 운영을 위해 사용자 화면 전환 조작 시 1일 최대 2회(최소 4시간 간격) 전면광고가 표시될 수 있으며, Google Mobile Ads SDK는 광고 제공·빈도 제한·성과 측정·부정 클릭 방지를 위해 광고 식별자(AD_ID) 및 기본 기기 진단 정보를 수집·처리할 수 있습니다. (Android 설정 → Google → 광고에서 맞춤형 광고 거부 가능)</li>
+      <li><strong>광고 서비스 (Google AdMob · AD_ID):</strong> 앱 운영을 위해 낮 시간대 자동 닫힘 하단 슬림 배너(1일 최대 4회) 및 사용자 화면 전환 조작 시 1일 최대 3회(최소 2시간 30분 간격) 전면광고가 표시될 수 있으며, Google Mobile Ads SDK는 광고 제공·빈도 제한·성과 측정·부정 클릭 방지를 위해 광고 식별자(AD_ID) 및 기본 기기 진단 정보를 수집·처리할 수 있습니다. (Android 설정 → Google → 광고에서 맞춤형 광고 거부 가능)</li>
     </ul>
 
     <h2>2. 외부 서비스 처리(제3자 SDK · API) 및 보유·파기</h2>
@@ -40,12 +40,12 @@
 
     <h2>3. 광고 대가성 및 외부 데이터 출처 고지</h2>
     <ul>
-      <li>실시간 배너 및 제휴 광고 문구는 표시하지 않으며, 하루 최대 2회 전면광고만 운영합니다.</li>
+      <li>상시 고정 배너 및 제휴 광고 문구는 표시하지 않으며, 낮 시간대 잠시 표시 후 자동 닫히는 하단 슬림 배너(하루 최대 4회)와 사용자 조작 전환 시 하루 최대 3회(최소 2시간 30분 간격) 전면광고만 운영합니다.</li>
       <li>날씨·대기질(MET Norway CC BY 4.0 · Sensor.Community DbCL 1.0 · OpenAQ CC BY 4.0 · 선택 시 에어코리아 공공누리), 지역별 생활정보 및 공휴일 안내는 각 항목 선택 시 출처를 명시합니다.</li>
     </ul>
 
     <h2>4. English Summary</h2>
-    <p><strong>Lovely memories</strong> (<code>com.bluewind.lovelymemories</code>), published by <strong>스노비 (wonwoo lee)</strong>, is an on-device digital photo frame with no developer account server. On-device folders are accessed read-only solely for folders explicitly chosen via Android's system folder picker (<code>ACTION_OPEN_DOCUMENT_TREE</code>) without broad storage permissions. Cloud photos are read only from the account the user signs in to (Google Drive: only files picked via <code>drive.file</code>). OneDrive/Dropbox tokens and Synology NAS passwords are encrypted on-device with AndroidKeyStore AES-256-GCM; Google sign-in is managed by Google Play services. Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is requested only when triggered by the user and sent rounded to 4 decimal places ephemerally to MET Norway / Sensor.Community / OpenAQ for weather and air-quality forecasts. Google Mobile Ads SDK processes <code>AD_ID</code> and basic device/ad telemetry to serve at most two user-transition interstitial ads per day. Developer does not sell user data. Contact: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a>.</p>
+    <p><strong>Lovely memories</strong> (<code>com.bluewind.lovelymemories</code>), published by <strong>스노비 (wonwoo lee)</strong>, is an on-device digital photo frame with no developer account server. On-device folders are accessed read-only solely for folders explicitly chosen via Android's system folder picker (<code>ACTION_OPEN_DOCUMENT_TREE</code>) without broad storage permissions. Cloud photos are read only from the account the user signs in to (Google Drive: only files picked via <code>drive.file</code>). OneDrive/Dropbox tokens and Synology NAS passwords are encrypted on-device with AndroidKeyStore AES-256-GCM; Google sign-in is managed by Google Play services. Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is requested only when triggered by the user and sent rounded to 4 decimal places ephemerally to MET Norway / Sensor.Community / OpenAQ for weather and air-quality forecasts. Google Mobile Ads SDK processes <code>AD_ID</code> and basic device/ad telemetry to serve brief auto-closing daytime bottom banners (up to 4/day) and at most three user-transition interstitial ads per day (min 2.5h apart). Developer does not sell user data. Contact: <a href="mailto:bluewind201@naver.com">bluewind201@naver.com</a>.</p>
   </div>
 </body>
 </html>
